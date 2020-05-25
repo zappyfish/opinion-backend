@@ -1,4 +1,4 @@
-package main.java.opinion.rules;
+package opinion.rules;
 
 import main.java.opinion.sentences.Sentence;
 

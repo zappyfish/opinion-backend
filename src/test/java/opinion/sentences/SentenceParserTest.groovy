@@ -1,4 +1,4 @@
-package java.opinion.sentences
+package opinion.sentences
 
 class SentenceParserTest extends groovy.util.GroovyTestCase {
 

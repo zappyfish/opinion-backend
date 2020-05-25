@@ -1,4 +1,4 @@
-package main.java.opinion.sentences;
+package opinion.sentences;
 
 import java.util.Iterator;
 

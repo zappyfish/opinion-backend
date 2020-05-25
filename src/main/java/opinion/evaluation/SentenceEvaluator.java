@@ -1,4 +1,4 @@
-package main.java.opinion.evaluation;
+package opinion.evaluation;
 
 import main.java.opinion.sentences.Sentence;
 
