@@ -1,6 +1,6 @@
-package evaluation;
+package main.java.opinion.evaluation;
 
-import sentences.Sentence;
+import main.java.opinion.sentences.Sentence;
 
 public interface SentenceEvaluator {
 

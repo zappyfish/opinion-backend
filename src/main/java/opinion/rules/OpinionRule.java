@@ -1,6 +1,6 @@
-package rules;
+package main.java.opinion.rules;
 
-import sentences.Sentence;
+import main.java.opinion.sentences.Sentence;
 
 public interface OpinionRule {
 

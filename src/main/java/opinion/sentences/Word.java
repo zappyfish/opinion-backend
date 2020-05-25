@@ -1,4 +1,4 @@
-package sentences;
+package main.java.opinion.sentences;
 
 class Word {
 

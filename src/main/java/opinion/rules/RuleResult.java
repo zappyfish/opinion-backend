@@ -1,4 +1,4 @@
-package rules;
+package main.java.opinion.rules;
 
 public class RuleResult {
 
