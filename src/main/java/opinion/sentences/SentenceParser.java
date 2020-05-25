@@ -10,16 +10,16 @@ class SentenceParser implements Iterator<String> {
 
     @Override
     public String next() {
-
+        return null;
     }
 
     @Override
     public boolean hasNext() {
-
+        return false;
     }
 
     @Override
     public void remove() {
-
+        return;
     }
 }
