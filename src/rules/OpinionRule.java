@@ -1,4 +1,6 @@
-package src.rules;
+package rules;
+
+import sentences.Sentence;
 
 public interface OpinionRule {
 

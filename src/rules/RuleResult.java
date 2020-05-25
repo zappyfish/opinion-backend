@@ -1,8 +1,8 @@
-package src.rules;
+package rules;
 
 public class RuleResult {
 
-    bool rulePassed() {
+    boolean rulePassed() {
 
     }
 

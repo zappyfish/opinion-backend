@@ -1,7 +1,9 @@
-package src.evaluation;
+package evaluation;
+
+import sentences.Sentence;
 
 public interface SentenceEvaluator {
 
-    bool isOpinion(Sentence sentence);
+    boolean isOpinion(Sentence sentence);
 
 }

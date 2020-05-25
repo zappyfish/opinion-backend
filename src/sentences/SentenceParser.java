@@ -1,4 +1,6 @@
-package src.sentences;
+package sentences;
+
+import java.util.Iterator;
 
 class SentenceParser implements Iterator<String> {
 
@@ -6,18 +8,18 @@ class SentenceParser implements Iterator<String> {
 
     }
 
-    @override
-    String next() {
+    @Override
+    public String next() {
 
     }
 
-    @override
-    boolean hasNext() {
+    @Override
+    public boolean hasNext() {
 
     }
 
-    @override
-    void remove() {
+    @Override
+    public void remove() {
 
     }
 }

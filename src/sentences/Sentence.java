@@ -1,4 +1,7 @@
-package src.sentences;
+package sentences;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Sentence {
 
@@ -8,11 +11,15 @@ public class Sentence {
         words = new ArrayList<>();
         final SentenceParser sentenceParser = new SentenceParser(strSentence);
         while (sentenceParser.hasNext()) {
-            words.add(sentenceParser.next());
+            addWord(sentenceParser.next());
         }
     }
 
     List<Word> getWords() {
         return words;
+    }
+
+    private void addWord(String strWord) {
+
     }
 }

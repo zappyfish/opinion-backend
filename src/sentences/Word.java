@@ -1,8 +1,8 @@
-package src.sentences;
+package sentences;
 
 class Word {
 
-    private final word;
+    private final String word;
 
     Word(String strWord) {
         word = strWord;
