@@ -8,7 +8,7 @@ public class Sentence {
     private final List<Word> words;
 
     public Sentence(String strSentence) {
-        words = new ArrayList<>();
+        words = new ArrayList();
         final SentenceParser sentenceParser = new SentenceParser(strSentence);
         while (sentenceParser.hasNext()) {
             addWord(sentenceParser.next());
