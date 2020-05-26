@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package proto;
+
+message RuleResult {
+    bool ruled_passed = 1;
+    string rule_explanation = 2;
+}
