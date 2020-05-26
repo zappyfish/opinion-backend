@@ -1,10 +1,11 @@
 package opinion.rules;
 
 import opinion.sentences.Sentence;
+import proto.RuleResultOuterClass;
 
 public interface OpinionRule {
 
-    RuleResult applyRule(Sentence sentence);
+    RuleResultOuterClass.RuleResult applyRule(Sentence sentence);
 
     String ruleExplanation();
 }
