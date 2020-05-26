@@ -7,7 +7,7 @@ public class SentenceParserTest {
 
     @Test
     public void firstTest() {
-        Assert.assertTrue(true);
+        Assert.assertTrue(false);
     }
 
 }
