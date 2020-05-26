@@ -4,6 +4,10 @@ import opinion.sentences.Sentence;
 import opinion.sentences.Word;
 import proto.RuleResultOuterClass;
 
+
+/**
+ * Test class implementing the SentenceRule interface, used for testing other classes.
+ */
 public class SentenceRuleForTest implements SentenceRule {
 
     @Override
