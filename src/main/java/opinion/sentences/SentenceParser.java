@@ -14,6 +14,7 @@ class SentenceParser implements Iterator<String> {
 
     /**
      * Initializes member variables
+     *
      * @param strSentence sentence to be parsed
      */
     public SentenceParser(String strSentence) {
@@ -22,11 +23,12 @@ class SentenceParser implements Iterator<String> {
         mWordIndex = 0;
     }
 
-    @Nullable
-    @Override
+
     /**
      * returns next word in sentence, null if there is no next word
      */
+    @Nullable
+    @Override
     public String next() {
         if (!hasNext()) {
             return null;
@@ -35,10 +37,11 @@ class SentenceParser implements Iterator<String> {
         return mWords[mWordIndex++]; // get next word in sentence
     }
 
-    @Override
+
     /**
      * returns true if there are still words left in sentence to be processed
      */
+    @Override
     public boolean hasNext() {
         return mWordIndex < mWords.length;
     }
