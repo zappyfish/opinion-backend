@@ -1,7 +1,7 @@
 package opinion.rules;
 
 /**
- * A Factor to get the rule corresponding to a string rule name
+ * A Factory to get the rule corresponding to a string rule name
  */
 public class RuleFactory {
 
