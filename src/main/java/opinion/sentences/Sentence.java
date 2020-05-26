@@ -5,21 +5,21 @@ import java.util.List;
 
 public class Sentence {
 
-    private final List<Word> words;
+    private final List<Word> mWords;
 
     public Sentence(String strSentence) {
-        words = new ArrayList();
+        mWords = new ArrayList();
         final SentenceParser sentenceParser = new SentenceParser(strSentence);
         while (sentenceParser.hasNext()) {
             addWord(sentenceParser.next());
         }
     }
 
-    List<Word> getWords() {
-        return words;
+    public List<Word> getWords() {
+        return mWords;
     }
 
     private void addWord(String strWord) {
-
+        mWords.add(new Word(strWord));
     }
 }

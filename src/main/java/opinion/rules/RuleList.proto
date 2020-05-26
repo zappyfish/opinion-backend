@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package proto;
+
+message RuleList {
+    repeated Rule rules = 1;
+}
+
+message Rule {
+    string rule_name = 1;
+}

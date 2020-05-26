@@ -3,9 +3,9 @@ package opinion.rules;
 import opinion.sentences.Sentence;
 import proto.RuleResultOuterClass;
 
-public interface OpinionRule {
+public interface SentenceRule {
 
     RuleResultOuterClass.RuleResult applyRule(Sentence sentence);
 
-    String ruleExplanation();
+    String getRuleName();
 }

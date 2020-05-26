@@ -1,14 +1,14 @@
 package opinion.sentences;
 
-class Word {
+public class Word {
 
-    private final String word;
+    private final String mWord;
 
     Word(String strWord) {
-        word = strWord;
+        mWord = strWord;
     }
 
-    String word() {
-        return word;
+    public String word() {
+        return mWord;
     }
 }
