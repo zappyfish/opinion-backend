@@ -11,7 +11,7 @@ class SentenceParser implements Iterator<String> {
 
 
     public SentenceParser(String strSentence) {
-        mWords = strSentence.split("\\s+");
+        mWords = strSentence.trim().split("\\W+"); //
         mWordIndex = 0;
         for (int i = 0; i < mWords.length; i++) {
             // TODO(anna): improve this when it breaks
