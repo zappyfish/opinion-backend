@@ -3,6 +3,15 @@ syntax = "proto3";
 package proto;
 
 message RuleResult {
-    bool ruled_passed = 1;
+    RuleDescription rule_description = 1;
+    bool rule_applies = 2;
+}
+
+message RuleDescription {
+    enum RuleType {
+        OPINION = 0;
+        FACT = 1;
+    }
+    RuleType rule_type = 1;
     string rule_explanation = 2;
 }
