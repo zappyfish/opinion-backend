@@ -2,7 +2,7 @@ package opinion.rules;
 
 import opinion.sentences.Sentence;
 import proto.RuleListOuterClass;
-import proto.RuleResultOuterClass;
+import proto.RuleResultOuterClass.*;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -30,8 +30,8 @@ public class RuleEngine {
      * @param sentence - the Sentence to analyze
      * @return - the result of applyinig every rule contained in the rule engine
      */
-    public List<RuleResultOuterClass.RuleResult> applyRules(Sentence sentence) {
-        List<RuleResultOuterClass.RuleResult> ruleResults = new LinkedList<RuleResultOuterClass.RuleResult>();
+    public List<RuleResult> applyRules(Sentence sentence) {
+        List<RuleResult> ruleResults = new LinkedList<RuleResult>();
         for (SentenceRule sentenceRule : mSentenceRules) {
             ruleResults.add(sentenceRule.applyRule(sentence));
         }
