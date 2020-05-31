@@ -7,7 +7,7 @@ import proto.RuleResultOuterClass;
 
 
 /**
- * Test class implementing the SentenceRule interface, used for testing other classes.
+ * Should rule -- if a sentence contains the word "should", it is an opinion
  */
 public class ShouldRule extends SentenceRule {
 
@@ -24,7 +24,7 @@ public class ShouldRule extends SentenceRule {
     @Override
     public boolean ruleApplies(Sentence sentence) {
         for (Word word : sentence.getWords()) {
-            if (word.word().toLowerCase().contains("should")) {
+            if (word.word().toLowerCase().contains("should")) { // will also cover shouldn't
                 return true;
             }
         }
