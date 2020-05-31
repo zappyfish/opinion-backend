@@ -14,7 +14,7 @@ public class RuleFactory {
     // Add your new rule name here:
     public static final String[] sRuleNames = {
             "for_test",
-            "should",
+            "contains_should",
     };
 
     /**
@@ -26,7 +26,7 @@ public class RuleFactory {
         if (ruleName.equals("for_test")) {
             return new SentenceRuleForTest();
         }
-        if (ruleName.equals("should")) {
+        if (ruleName.equals("contains_should")) {
             return new ContainsShouldRule();
         }
         return null;
