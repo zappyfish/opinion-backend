@@ -1,7 +1,7 @@
 package opinion.rules;
 
 import opinion.rules.impls.SentenceRuleForTest;
-import opinion.rules.impls.ShouldRule;
+import opinion.rules.impls.ContainsShouldRule;
 import org.reflections.Reflections;
 
 import java.util.Set;
@@ -27,7 +27,7 @@ public class RuleFactory {
             return new SentenceRuleForTest();
         }
         if (ruleName.equals("should")) {
-            return new ShouldRule();
+            return new ContainsShouldRule();
         }
         return null;
     }

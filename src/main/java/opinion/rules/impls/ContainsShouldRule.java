@@ -9,7 +9,7 @@ import proto.RuleResultOuterClass;
 /**
  * Should rule -- if a sentence contains the word "should", it is an opinion
  */
-public class ShouldRule extends SentenceRule {
+public class ContainsShouldRule extends SentenceRule {
 
     @Override
     public String getRuleExplanation() {
