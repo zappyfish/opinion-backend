@@ -1,6 +1,7 @@
 package opinion.rules;
 
 import opinion.rules.impls.SentenceRuleForTest;
+import opinion.rules.impls.ShouldRule;
 import org.reflections.Reflections;
 
 import java.util.Set;
@@ -13,6 +14,7 @@ public class RuleFactory {
     // Add your new rule name here:
     public static final String[] sRuleNames = {
             "for_test",
+            "should",
     };
 
     /**
@@ -23,6 +25,9 @@ public class RuleFactory {
         // Add your new rule name + type mapping here:
         if (ruleName.equals("for_test")) {
             return new SentenceRuleForTest();
+        }
+        if (ruleName.equals("should")) {
+            return new ShouldRule();
         }
         return null;
     }
