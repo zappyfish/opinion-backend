@@ -1,7 +1,7 @@
 package opinion.rules;
 
 import opinion.sentences.Sentence;
-import proto.RuleListOuterClass;
+import proto.RuleListOuterClass.*;
 import proto.RuleResultOuterClass.*;
 
 import java.util.LinkedList;
@@ -18,9 +18,9 @@ public class RuleEngine {
     /**
      * Instantiate a RuleEngine that will apply the rules described by ruleList
      */
-    public RuleEngine(RuleListOuterClass.RuleList ruleList) {
+    public RuleEngine(RuleList ruleList) {
         mSentenceRules = new LinkedList<SentenceRule>();
-        for (RuleListOuterClass.Rule rule : ruleList.getRulesList()) {
+        for (Rule rule : ruleList.getRulesList()) {
             mSentenceRules.add(RuleFactory.getRule(rule.getRuleName()));
         }
     }
