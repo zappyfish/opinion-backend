@@ -1,9 +1,9 @@
 package opinion.rules.impls;
 
+import opinion.rules.RuleResult;
 import opinion.rules.SentenceRule;
 import opinion.sentences.Sentence;
 import opinion.sentences.Word;
-import proto.RuleResultOuterClass;
 
 
 /**
@@ -17,8 +17,8 @@ public class ContainsShouldRule extends SentenceRule {
     }
 
     @Override
-    public RuleResultOuterClass.RuleDescription.RuleType getRuleType() {
-        return RuleResultOuterClass.RuleDescription.RuleType.OPINION;
+    public RuleResult.RuleType getRuleType() {
+        return RuleResult.RuleType.OPINION;
     }
 
     @Override

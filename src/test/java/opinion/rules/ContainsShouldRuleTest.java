@@ -4,7 +4,6 @@ import opinion.rules.impls.ContainsShouldRule;
 import opinion.sentences.Sentence;
 import org.junit.Assert;
 import org.junit.Test;
-import proto.RuleResultOuterClass;
 
 public class ContainsShouldRuleTest {
 
@@ -17,7 +16,7 @@ public class ContainsShouldRuleTest {
     @Test
     public void testGetRuleType() {
         ContainsShouldRule shouldRule = new ContainsShouldRule();
-        Assert.assertEquals(shouldRule.getRuleType(), RuleResultOuterClass.RuleDescription.RuleType.OPINION);
+        Assert.assertEquals(shouldRule.getRuleType(), RuleResult.RuleType.OPINION);
     }
 
     @Test

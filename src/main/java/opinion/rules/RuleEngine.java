@@ -1,8 +1,6 @@
 package opinion.rules;
 
 import opinion.sentences.Sentence;
-import proto.RuleListOuterClass.*;
-import proto.RuleResultOuterClass.*;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -18,10 +16,10 @@ public class RuleEngine {
     /**
      * Instantiate a RuleEngine that will apply the rules described by ruleList
      */
-    public RuleEngine(RuleList ruleList) {
+    public RuleEngine(List<String> ruleList) {
         mSentenceRules = new LinkedList<SentenceRule>();
-        for (Rule rule : ruleList.getRulesList()) {
-            mSentenceRules.add(RuleFactory.getRule(rule.getRuleName()));
+        for (String rule : ruleList) {
+            mSentenceRules.add(RuleFactory.getRule(rule));
         }
     }
 

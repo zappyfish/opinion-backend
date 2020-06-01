@@ -1,7 +1,6 @@
 package opinion.rules;
 
 import opinion.sentences.Sentence;
-import proto.RuleResultOuterClass.*;
 
 public abstract class SentenceRule {
 
@@ -10,23 +9,16 @@ public abstract class SentenceRule {
      * @return the result of applying this rule to a sentence
      */
     RuleResult applyRule(Sentence sentence) {
-        return RuleResult.newBuilder()
-                .setRuleDescription(getRuleDescription())
+        return new RuleResult.Builder()
                 .setRuleApplies(ruleApplies(sentence))
-                .build();
-    }
-
-    private RuleDescription getRuleDescription() {
-        return RuleDescription.newBuilder()
+                .setRuleDescription(getRuleExplanation())
                 .setRuleType(getRuleType())
-                .setRuleExplanation(getRuleExplanation())
                 .build();
     }
-
 
     protected abstract String getRuleExplanation();
 
-    public abstract RuleDescription.RuleType getRuleType();
+    public abstract RuleResult.RuleType getRuleType();
 
     public abstract boolean ruleApplies(Sentence sentence);
 }
