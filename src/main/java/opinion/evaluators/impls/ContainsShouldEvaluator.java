@@ -12,23 +12,20 @@ import opinion.sentences.Word;
 public class ContainsShouldEvaluator extends SentenceEvaluator {
 
     @Override
-    public String getEvaluatorExplanation() {
-        return "this evaluator says that a sentence is opinionated if it contains the word \"should\"";
+    public String getEvaluatorDescription() {
+        return "this evaluator says that a sentence is an OPINION if it contains the word \"should\"";
     }
 
     @Override
-    public EvaluatorResult.EvaluatorType getEvaluatorType() {
-        return EvaluatorResult.EvaluatorType.OPINION;
-    }
-
-    @Override
-    public boolean evaluatorApplies(Sentence sentence) {
+    public EvaluatorResult.Evaluation getEvaluation(Sentence sentence) {
         for (Word word : sentence.getWords()) {
             if (word.word().toLowerCase().contains("should")) { // will also cover shouldn't
-                return true;
+                return EvaluatorResult.Evaluation.OPINION;
             }
         }
-        return false;
+        return EvaluatorResult.Evaluation.NO_RESULT;
     }
+
+
 
 }

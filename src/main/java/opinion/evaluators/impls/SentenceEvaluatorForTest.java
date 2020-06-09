@@ -12,23 +12,18 @@ import opinion.sentences.Word;
 public class SentenceEvaluatorForTest extends SentenceEvaluator {
 
     @Override
-    public String getEvaluatorExplanation() {
-        return "this evaluator says that a sentence is factual if it contains the word \"fact\"";
+    public String getEvaluatorDescription() {
+        return "this evaluator says that a sentence is a FACT if it contains the word \"fact\"";
     }
 
     @Override
-    public EvaluatorResult.EvaluatorType getEvaluatorType() {
-        return EvaluatorResult.EvaluatorType.FACT;
-    }
-
-    @Override
-    public boolean evaluatorApplies(Sentence sentence) {
+    public EvaluatorResult.Evaluation getEvaluation(Sentence sentence) {
         for (Word word : sentence.getWords()) {
             if (word.word().toLowerCase().equals("fact")) {
-                return true;
+                return EvaluatorResult.Evaluation.FACT;
             }
         }
-        return false;
+        return EvaluatorResult.Evaluation.NO_RESULT;
     }
 
 }

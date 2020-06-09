@@ -1,7 +1,5 @@
 package opinion.evaluators;
 
-import opinion.evaluators.EvaluatorResult;
-import opinion.evaluators.EvaluatorEngine;
 import opinion.sentences.Sentence;
 import org.junit.Assert;
 import org.junit.Test;
@@ -24,14 +22,14 @@ public class EvaluatorEngineTest {
         List<EvaluatorResult> evaluationResults1 = evaluatorEngine.applyEvaluators(sentence1);
         Assert.assertEquals(evaluationResults1.size(), 1);
 
-        // The sentence contained "fact", so the evaluator should apply
-        Assert.assertTrue(evaluationResults1.get(0).getEvaluatorApplies());
+        // The sentence contained "fact", so the evaluator should return FACT
+        Assert.assertEquals(evaluationResults1.get(0).getEvaluation(), EvaluatorResult.Evaluation.FACT);
 
         Sentence sentence2 = new Sentence("this sentence does not contain that word");
         List<EvaluatorResult> evaluationResults2 = evaluatorEngine.applyEvaluators(sentence2);
         Assert.assertEquals(evaluationResults2.size(), 1);
 
-        // The sentence did not contain "fact", so the evaluator should not apply
-        Assert.assertFalse(evaluationResults2.get(0).getEvaluatorApplies());
+        // The sentence did not contain "fact", so the evaluator should return NO_RESULT
+        Assert.assertEquals(evaluationResults2.get(0).getEvaluation(), EvaluatorResult.Evaluation.NO_RESULT);
     }
 }

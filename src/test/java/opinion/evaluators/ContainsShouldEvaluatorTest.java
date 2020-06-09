@@ -8,19 +8,13 @@ import org.junit.Test;
 public class ContainsShouldEvaluatorTest {
 
     @Test
-    public void testGetEvaluatorExplanation() {
+    public void testGetEvaluatorDescription() {
         ContainsShouldEvaluator shouldEvaluator = new ContainsShouldEvaluator();
-        Assert.assertEquals(shouldEvaluator.getEvaluatorExplanation(), "this evaluator says that a sentence is opinionated if it contains the word \"should\"");
+        Assert.assertEquals(shouldEvaluator.getEvaluatorDescription(), "this evaluator says that a sentence is an OPINION if it contains the word \"should\"");
     }
 
     @Test
-    public void testGetEvaluatorType() {
-        ContainsShouldEvaluator shouldEvaluator = new ContainsShouldEvaluator();
-        Assert.assertEquals(shouldEvaluator.getEvaluatorType(), EvaluatorResult.EvaluatorType.OPINION);
-    }
-
-    @Test
-    public void testEvaluatorApplies() {
+    public void testGetEvaluation(){
         ContainsShouldEvaluator shouldEvaluator = new ContainsShouldEvaluator();
 
         Sentence mTestSentence1 = new Sentence("We should do this.");
@@ -30,13 +24,14 @@ public class ContainsShouldEvaluatorTest {
         Sentence mTestSentence5 = new Sentence("I like grapes.");
         Sentence mTestSentence6 = new Sentence("Seltzer is my favorite drink.");
 
-        Assert.assertTrue(shouldEvaluator.evaluatorApplies(mTestSentence1));
-        Assert.assertTrue(shouldEvaluator.evaluatorApplies(mTestSentence2));
-        Assert.assertTrue(shouldEvaluator.evaluatorApplies(mTestSentence3));
-        Assert.assertTrue(shouldEvaluator.evaluatorApplies(mTestSentence4));
+        Assert.assertEquals(shouldEvaluator.getEvaluation(mTestSentence1), EvaluatorResult.Evaluation.OPINION);
+        Assert.assertEquals(shouldEvaluator.getEvaluation(mTestSentence2), EvaluatorResult.Evaluation.OPINION);
+        Assert.assertEquals(shouldEvaluator.getEvaluation(mTestSentence3), EvaluatorResult.Evaluation.OPINION);
+        Assert.assertEquals(shouldEvaluator.getEvaluation(mTestSentence4), EvaluatorResult.Evaluation.OPINION);
+        Assert.assertEquals(shouldEvaluator.getEvaluation(mTestSentence5), EvaluatorResult.Evaluation.NO_RESULT);
+        Assert.assertEquals(shouldEvaluator.getEvaluation(mTestSentence6), EvaluatorResult.Evaluation.NO_RESULT);
 
-        Assert.assertFalse(shouldEvaluator.evaluatorApplies(mTestSentence5));
-        Assert.assertFalse(shouldEvaluator.evaluatorApplies(mTestSentence6));
+
     }
 
 }

@@ -25,7 +25,7 @@ public class EvaluatorEngine {
     }
 
     /**
-     * Apply every evaluator that is part of the evaluator engine to a sentence in order to get their results.
+     * Apply each evaluator to a sentence
      * @param sentence - the Sentence to analyze
      * @return - the result of applying every evaluator contained in the evaluator engine
      */

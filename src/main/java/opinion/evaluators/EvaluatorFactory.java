@@ -22,7 +22,7 @@ public class EvaluatorFactory {
      * @return - the SentenceEvaluator which corresponds to evaluatorName
      */
     public static SentenceEvaluator getEvaluator(String evaluatorName) {
-        // Add your new evaluator name + type mapping here:
+        // Add your new evaluator here:
         if (evaluatorName.equals("for_test")) {
             return new SentenceEvaluatorForTest();
         }
@@ -32,7 +32,7 @@ public class EvaluatorFactory {
         return null;
     }
 
-    public static Set<Class<? extends SentenceEvaluator>> getEvaluatorTypes() throws ClassNotFoundException {
+    public static Set<Class<? extends SentenceEvaluator>> getEvaluatorNames() throws ClassNotFoundException {
         Reflections reflections = new Reflections(EvaluatorFactory.class.getPackage().getName());
         Set<Class<? extends SentenceEvaluator>> classNames = reflections.getSubTypesOf(SentenceEvaluator.class);
         return classNames;

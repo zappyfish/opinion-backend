@@ -10,15 +10,12 @@ public abstract class SentenceEvaluator {
      */
     EvaluatorResult applyEvaluator(Sentence sentence) {
         return new EvaluatorResult.Builder()
-                .setEvaluatorApplies(evaluatorApplies(sentence))
-                .setEvaluatorDescription(getEvaluatorExplanation())
-                .setEvaluatorType(getEvaluatorType())
+                .setEvaluatorDescription(getEvaluatorDescription())
+                .setEvaluation(getEvaluation(sentence))
                 .build();
     }
 
-    protected abstract String getEvaluatorExplanation();
+    protected abstract String getEvaluatorDescription();
 
-    public abstract EvaluatorResult.EvaluatorType getEvaluatorType();
-
-    public abstract boolean evaluatorApplies(Sentence sentence);
+    public abstract EvaluatorResult.Evaluation getEvaluation(Sentence sentence);
 }

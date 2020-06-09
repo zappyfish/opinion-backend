@@ -12,23 +12,24 @@ public class EvaluatorFactoryTest {
     public void testGetEvaluator() {
         String testEvaluatorName = "for_test";
         SentenceEvaluator evaluator = EvaluatorFactory.getEvaluator(testEvaluatorName);
-        Assert.assertEquals(evaluator.getEvaluatorExplanation(), "this evaluator says that a sentence is factual if it contains the word \"fact\"");
+        Assert.assertEquals(evaluator.getEvaluatorDescription(),
+                "this evaluator says that a sentence is a FACT if it contains the word \"fact\"");
     }
 
     @Test
     public void testAllEvaluatorsAddedCorrectly() {
-        Set<Class<? extends SentenceEvaluator>> evaluatorTypes = null;
+        Set<Class<? extends SentenceEvaluator>> evaluatorNames = null;
         try {
-            evaluatorTypes = EvaluatorFactory.getEvaluatorTypes();
+            evaluatorNames = EvaluatorFactory.getEvaluatorNames();
         } catch (ClassNotFoundException e) {
             Assert.fail(); // If this happens, you probably added your new evaluator to the factory incorrectly
         }
         for (String evaluatorName : EvaluatorFactory.sEvaluatorNames) {
             SentenceEvaluator evaluator = EvaluatorFactory.getEvaluator(evaluatorName);
-            Assert.assertTrue(evaluatorTypes.contains(evaluator.getClass()));
-            evaluatorTypes.remove(evaluator.getClass());
+            Assert.assertTrue(evaluatorNames.contains(evaluator.getClass()));
+            evaluatorNames.remove(evaluator.getClass());
         }
-        // We should have seen every evaluator type
-        Assert.assertTrue(evaluatorTypes.isEmpty());
+        // We should have seen every evaluator name
+        Assert.assertTrue(evaluatorNames.isEmpty());
     }
 }

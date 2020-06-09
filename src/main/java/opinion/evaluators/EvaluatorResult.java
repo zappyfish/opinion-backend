@@ -1,43 +1,43 @@
 package opinion.evaluators;
 
+/**
+ * An EvaluatorResult contains the output of applying a single evaluator on a sentence.
+ * There are three possible evaluations: opinion, fact, or no result.
+ */
 public class EvaluatorResult {
-    public enum EvaluatorType {
+
+    public enum Evaluation {
         OPINION,
-        FACT
+        FACT,
+        NO_RESULT
     }
 
-    private final EvaluatorType mEvaluatorType;
+    private final Evaluation mEvaluation;
     private final String mEvaluatorDescription;
-    private final boolean mEvaluatorApplies;
 
-    private EvaluatorResult(EvaluatorType EvaluatorType, String EvaluatorDescription, boolean EvaluatorApplies) {
-        mEvaluatorType = EvaluatorType;
-        mEvaluatorDescription = EvaluatorDescription;
-        mEvaluatorApplies = EvaluatorApplies;
+    private EvaluatorResult(Evaluation evaluation, String evaluatorDescription) {
+        mEvaluation = evaluation;
+        mEvaluatorDescription = evaluatorDescription;
     }
 
-    public EvaluatorType getEvaluatorType() {
-        return mEvaluatorType;
+    public Evaluation getEvaluation() {
+        return mEvaluation;
     }
 
     public String getEvaluatorDescription() {
         return mEvaluatorDescription;
     }
 
-    public boolean getEvaluatorApplies() {
-        return mEvaluatorApplies;
-    }
-
     public static class Builder {
 
-        private EvaluatorType evaluatorType;
         private String evaluatorDescription;
-        private boolean evaluatorApplies;
+        private Evaluation evaluation;
 
-        public Builder() {}
+        public Builder() {
+        }
 
-        public Builder setEvaluatorType(EvaluatorType evaluatorType) {
-            this.evaluatorType = evaluatorType;
+        public Builder setEvaluation(Evaluation evaluation) {
+            this.evaluation = evaluation;
             return this;
         }
 
@@ -46,13 +46,9 @@ public class EvaluatorResult {
             return this;
         }
 
-        public Builder setEvaluatorApplies(boolean evaluatorApplies) {
-            this.evaluatorApplies = evaluatorApplies;
-            return this;
-        }
 
         public EvaluatorResult build() {
-            return new EvaluatorResult(this.evaluatorType, this.evaluatorDescription, this.evaluatorApplies);
+            return new EvaluatorResult(this.evaluation, this.evaluatorDescription);
         }
     }
 }
